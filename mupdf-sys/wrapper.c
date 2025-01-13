@@ -126,7 +126,7 @@ fz_context *mupdf_new_base_context()
         (void)pthread_mutex_init(&mutexes[i], NULL);
 #endif
     }
-    fz_context *ctx = fz_new_context(NULL, &locks, FZ_STORE_DEFAULT);
+    fz_context *ctx = fz_new_context(NULL, &locks, FZ_STORE_UNLIMITED);
     if (!ctx)
     {
         mupdf_drop_base_context(ctx);
